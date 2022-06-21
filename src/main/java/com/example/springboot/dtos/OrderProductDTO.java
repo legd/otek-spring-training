@@ -1,8 +1,11 @@
 package com.example.springboot.dtos;
 
 import com.example.springboot.dbmodels.OrderProduct;
+import lombok.Builder;
+import lombok.Data;
 
-
+@Data
+@Builder
 public class OrderProductDTO {
 
     private int id;

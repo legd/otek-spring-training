@@ -1,7 +1,5 @@
 package com.example.springboot.dbmodels;
 
-import com.example.springboot.dbmodels.Order;
-import com.example.springboot.dbmodels.Product;
 import com.example.springboot.dtos.OrderProductDTO;
 import lombok.*;
 
@@ -35,6 +33,6 @@ public class OrderProduct {
     }
 
     public OrderProductDTO transformToDTO() {
-        return new OrderProductDTO(this.id, this.order.transformToDTO(), this.product.transformToDTO(), this.quantity);
+        return OrderProductDTO.builder().id(this.id).order(this.order.transformToDTO()).product(this.product.transformToDTO()).build();
     }
 }

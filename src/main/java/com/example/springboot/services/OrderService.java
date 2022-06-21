@@ -62,8 +62,8 @@ public class OrderService {
         }
 
         order.setOrderProducts(orderProducts);
-        ordersRepository.save(order);
-        return response.order(order.transformToDTO()).build();
+        Order orderUpdated = ordersRepository.save(order);
+        return response.order(orderUpdated.transformToDTO()).build();
     }
 
     public OrderResponse update(UpdateOrderRequest updateOrder) {
